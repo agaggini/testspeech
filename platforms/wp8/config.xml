@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.capsistemas.consultorios" version="0.0.2" versionCode="1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <access origin="*" />
+    <preference name="phonegap-version" value="3.3.0" />
+    <name>Consultorios</name>
+    <description>
+        Hostorias Clinicas
+    </description>
+    <author email="info@capsistemas.com.ar" href="http://capsistemas.com">
+        CAP Sistemas
+    </author>
+    <icon gap:role="default" src="icon.png" />
+    <preference name="orientation" value="portrait" />
+</widget>

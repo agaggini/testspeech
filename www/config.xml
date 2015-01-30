@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.capsistemas.consultorios"
+        versionCode="1"
+        version   = "0.0.1">
+    <!-- versionCode is optional and Android only -->
+
+    <preference name="phonegap-version" value="3.5.0" />
+
+    <name>TestSpeach</name>
+
+    <description>
+        TestSpeach
+    </description>
+
+    <author href="http://capsistemas.com"
+        email="info@capsistemas.com.ar">
+        CAP Sistemas
+    </author>
+
+    <icon src="icon.png" gap:role="default" />
+
+    <!--<preference name="orientation" value="portrait" />-->
+
+    <access origin="*" />
+
+    <gap:plugin name="com.applicationnexus.plugins.speechrecognition" version="0.0.1" />
+</widget>

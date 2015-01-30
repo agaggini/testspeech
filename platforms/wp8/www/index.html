@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html manifest="offline.appcache" class="ui-mobile-rendering">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.css"/>
+  <link rel="stylesheet" href="lib/jquery.mobile-1.4.2/jquery.mobile.theme-1.4.2.css"/>
+  <!--<link rel="stylesheet" href="lib/ios_inspired/styles.css"/>-->
+  <link rel="stylesheet" href="lib/datebox/sheet.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+
+  <!-- Libraries -->
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="Connection.js"></script>
+  <script type="text/javascript" src="network.js"></script>
+
+  <script type="text/javascript" src="lib/jquery.js"></script>  
+  <script type="text/javascript" src="js/jqm-config.js"></script>
+  <script type="text/javascript" src="lib/jquery.mobile-1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+  <script type="text/javascript" src="lib/datebox/jqm-datebox.core.min.js"></script>
+  <script type="text/javascript" src="lib/datebox/jqm-datebox.mode.calbox.min.js"></script>
+
+  <script type="text/javascript" src="lib/underscore.js"></script>
+  <script type="text/javascript" src="lib/backbone.js"></script>
+
+  <!-- Config -->
+  <script src="js/app-config.js"></script>
+
+  <!-- Template loader -->
+  <script src="js/template-loader.js"></script>
+
+  <!-- SMA main file and router -->
+  <script src="js/main.js"></script>
+
+  <!-- Views -->
+  <script src="js/view/home-page.js"></script>
+  <script src="js/view/turnos-page.js"></script>
+  <script src="js/view/turnos-new-page.js"></script>
+  <script src="js/view/pacientes-page.js"></script>
+  <script src="js/view/paciente-details-page.js"></script>
+  <script src="js/view/about-dialog.js"></script>
+  
+  <!-- DAO -->
+  <script src="js/dao/pacientesDao.js"></script>
+  <script src="js/dao/turnosDao.js"></script>
+  <script src="js/dao/medicosDao.js"></script>
+  <script src="js/dao/tiposdocumentoDao.js"></script>
+  <script src="js/dao/obrassocialesDao.js"></script>
+  <script src="js/dao/evolucionesDao.js"></script>
+
+  <!-- Models -->
+  <script src="js/model/pacientes.js"></script>
+  <script src="js/model/turnos.js"></script>
+  <script src="js/model/medicos.js"></script>
+  <script src="js/model/evoluciones.js"></script>
+  <script src="js/model/tiposdocumento.js"></script>
+  <script src="js/model/obrassociales.js"></script>
+
+  <!-- Home Template -->
+  <script type="text/html" class="template" id="home-page">
+    <div data-role="header">
+      <h1>Consultorio</h1>
+    </div>
+
+    <div data-role="content">
+      <fieldset class="ui-grid-b">
+        <div class="ui-block-a"></div>
+        <div class="ui-block-b"><a href="#turnos/<%=appConfig.medicoId%>" data-role="button">Turnos</a></div>
+        <div class="ui-block-c"></div>
+
+        <div class="ui-block-a"></div>
+        <div class="ui-block-b"><a href="#pacientes/list" data-role="button">Pacientes</a></div>
+        <div class="ui-block-c"></div>
+
+        <div class="ui-block-a"></div>
+        <div class="ui-block-b"><a href="#turnos" data-role="button">Configuraci&oacute;n</a></div>
+        <div class="ui-block-c"></div>
+
+        <div class="ui-block-a"></div>
+        <div class="ui-block-b"><a href="#sincronizar" data-role="button">Sincronizar</a></div>
+        <div class="ui-block-c"></div>
+
+        <div class="ui-block-a"></div>        
+        <div class="ui-block-b"><a href="#about" data-role="button" data-transition="pop" data-rel="popup">About</a></div>
+        <div class="ui-block-c"></div>
+      </fieldset>      
+    </div>
+  </script>
+
+  <!-- Turnos Template -->  
+  <script type="text/html" class="template" id="turnos-page">
+    <div data-role="header" addBackBtn="true">
+      <a href="javascript: window.history.back();" data-icon="arrow-l">Volver</a>
+      <h1>Turnos <span id="fechaTitulo"></span></h1>
+      <div class="ui-btn-right">
+        <a class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-user" href="#" id="medicosMenu"><%=appConfig.medicoNombre%></a>            
+        <a class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline" href="#nav-panel"></a>
+      </div>
+    </div>
+
+    <div data-role="panel" data-position="right" data-position-fixed="false" data-display="push" id="nav-panel" data-theme="a">
+      <ul data-role="listview" data-theme="a">
+        <li id="calendar"></li>
+        <li><a href="#">Sobre Turno</a></li>
+      </ul>
+    </div>
+
+    <div data-role="content">
+      <ul data-role="listview" id="list-turnos" data-theme="a" data-split-theme="b" data-split-icon="gear"></ul>    
+
+      <div data-role="popup" id="popupMenuTurno" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+          <li><a href="#" id="confirmarTurno">Confirmar</a></li>
+          <li><a href="#" id="vistoTurno">Visto</a></li>
+          <li><a href="#" id="eliminarTurno">Eliminar</a></li>
+        </ul>          
+      </div>   
+
+      <div data-role="popup" id="popupMenuMedicos" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" id="listaMedicos">
+        </ul>          
+      </div>           
+    </div>
+  </script> 
+
+  <!-- Turno li Template -->
+  <script type="text/html" class="template" id="turno-list-item">    
+    <% if (model.get('paciente_id') == 0) { %>
+      <a class="ui-btn" href="#turnos/new/<%= appConfig.fecha.getFullYear() %><%= ("0" + (appConfig.fecha.getMonth()+1)).slice(-2) %><%= ("0" + appConfig.fecha.getDate()).slice(-2) %>/<%= model.get('hora') %>">
+        <h2><%= model.get('hora') %></h2>        
+        <p></p>
+      </a>                      
+      <a class="ui-btn ui-btn-icon-notext ui-icon-carat-r ui-btn-a" href="#turnos/new/<%= appConfig.fecha.getFullYear() %><%= ("0" + (appConfig.fecha.getMonth()+1)).slice(-2) %><%= ("0" + appConfig.fecha.getDate()).slice(-2) %>/<%= model.get('hora') %>">Purchase album</a>    
+    <% } 
+    else { %>       
+      <a class="ui-btn" href="#paciente/ficha">
+        <h2><%= model.get('hora') %>
+        <%= model.get('nombre')%></h2>
+        <p>
+          <% if (model.get('presente') == true) { %>
+            <span>Presente</span>
+          <%
+          }
+          if (model.get('visto') == true) { %>
+            <span>Visto</span>
+          <%  
+          }
+          %>
+        </p>
+      </a>
+      <a class="ui-btn ui-btn-icon-notext ui-icon-gear ui-btn-a" href="#" id="turnoMenu" data="<%= model.get('idDataBase') %>"></a>
+    <% } %>  
+  </script>
+
+  <!-- Turnos New Select Paciente Template -->
+  <script type="text/html" class="template" id="turnos-new-page">
+    <div data-role="header">
+      <a href="javascript: window.history.back();" data-icon="arrow-l">Volver</a>
+      <h1>Nuevo Turno</h1>      
+    </div>
+
+    <div data-role="content">
+      <ul data-role="listview" data-autodividers="true" data-filter="true" data-filter-placeholder="Paciente..." data-filter-theme="d" id="list-pacientes">
+      </ul>    
+    </div>
+  </script>
+
+  <!-- Turnos New Paciente Template -->
+  <script type="text/html" class="template" id="turnos-new-li">
+    <a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#turnos/save/<%= appConfig.fecha.getFullYear() %><%= ("0" + (appConfig.fecha.getMonth()+1)).slice(-2) %><%= ("0" + appConfig.fecha.getDate()).slice(-2) %>/<%= this.options.hora %>/<%= model.get('id') %>">
+      <%= model.get('nombre') %>
+    </a>
+  </script>
+
+  <!-- Turnos Save Detail Paciente Page Template -->
+  <script type="text/html" class="template" id="turnos-paciente-detail-save-page">
+    <div data-role="fieldcontain">
+       <label for="paciente">Paciente:</label>
+       <input data-mini="true" name="paciente" id="paciente" value="<%= model.get('nombre') %>" type="text" readonly="readonly">
+    </div>      
+  </script>  
+
+  <!-- Pacientes List Template -->
+  <script type="text/html" class="template" id="pacientes-list-page">
+    <div data-role="header" addBackBtn="true">
+      <a href="javascript: window.history.back();" data-icon="arrow-l">Volver</a>
+      <h1>Pacientes</h1>
+      <a href="#paciente/agregar" data-icon="plus">Nuevo</a>
+    </div>  
+
+    <div data-role="content">
+      <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true" data-autodividers="true"></ul>
+    </div>
+  </script>
+
+  <!-- Pacientes li Template -->
+  <script type="text/html" class="template" id="paciente-list-item">
+    <a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#paciente/details/<%= model.get('id') %>">
+      <%= model.get('nombre') %>
+    </a>
+  </script>
+
+  <!-- Pacientes Detail Page Template -->
+  <script type="text/html" class="template" id="paciente-details-page">
+    <div data-role="header">
+      <a href="#" id="volver" data-icon="arrow-l">Volver</a>
+      <h1>Datos del Paciente</h1>      
+    </div>
+
+    <div data-role="content" class="paciente-details"></div>
+  </script>
+
+  <!-- Pacientes Detail Template -->
+  <script type="text/html" class="template" id="paciente-details">
+    <div data-role="tabs">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#datos" data-theme="a" data-ajax="false" class="ui-btn-active">Datos Personales</a></li>
+          <% if(!this.options.nuevo) { %>
+            <li><a href="#evolucion" data-theme="a" data-ajax="false">Evoluciones</a></li>
+          <%}%>            
+        </ul>
+      </div>
+      <%= this.options.nuevo%>
+      <div id="datos" class="ui-content">
+        <form>
+          <label for="nombre">Nombre:</label>
+          <input name="nombre" id="nombre" value="<%= model.get('nombre') %>" type="text">
+
+          <label for="telefono">Tel&eacute;fonos:</label>
+          <input name="telefono" id="telefono" value="<%= model.get('telefonos') %>" type="text">
+
+          <label for="domicilio">Domicilio:</label>
+          <input name="domicilio" id="domicilio" value="<%= model.get('domicilio') %>" type="text">
+
+          <label for="localidad">Localidad:</label>
+          <input name="localidad" id="localidad" value="<%= model.get('localidad') %>" type="text">
+
+          <label for="mail">Mail:</label>
+          <input name="mail" id="mail" value="<%= model.get('mail') %>" type="text">
+
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+              <label for="documentotipo" class="select">Documento Tipo:</label>
+              <select name="documentotipo" id="documentotipo" data-mini="true" data-native-menu="true">
+              </select>              
+            </div>
+            <div class="ui-block-b">
+              <label for="documentonumero">Documento N&uacute;mero:</label>
+              <input name="documentonumero" id="documentonumero" value="<%= model.get('documentonro') %>" type="text">
+            </div>
+          </div>      
+
+          <label for="estadocivil">Estado Civil:</label>
+          <input name="estadocivil" id="estadocivil" value="<%= model.get('estadocivil') %>" type="text">
+
+          <label for="fechanacimiento">Fecha de Nacimiento:</label>
+          <input name="fechanacimietno" id="fechanacimiento" value="<%= model.get('fecha_nacimiento') %>" type="date">
+
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+              <label for="obrasocial" class="select">Obra Social:</label>
+              <select name="obrasocial" id="obrasocial" data-mini="true" data-native-menu="true">
+              </select>
+            </div>
+            <div class="ui-block-b">
+              <label for="nroafiliado">N&uacute;mero de Afiliado:</label>
+              <input name="nroafiliado" id="nroafiliado" value="<%= model.get('nroafiliado') %>" type="text">
+            </div>
+          </div>                
+
+          <div data-role="footer" style="overflow:hidden;" class="ui-body-a ui-body" data-position="fixed">
+            <div data-role="navbar">
+              <ul>
+                <li><a href="#" id="guardar" data-role="button">Guardar</a></li>
+                <li><a href="#" id="cancelar" data-role="button">Cancelar</a></li>
+              </ul>
+            </div>
+          </div>    
+        </form>    
+      </div>
+      <% if (this.model.get('id')) { %>
+      <div id="evolucion" class="ui-content">
+        <div data-role="content">
+          <ul data-role="listview" id="evoluciones" class="ui-listview ui-group-theme-a"></ul>
+        </div>      
+      </div>
+      <%}%>            
+    </div>
+  </script>
+
+  <!-- Evolucion List Template Item -->
+  <script type="text/html" class="template" id="paciente-evolucion">
+    <a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#paciente/details/<%= model.get('id') %>">
+      <%= model.get('nombre') %>
+    </a>
+  </script>
+
+  <!-- About Template -->
+  <script type="text/html" class="template" id="about-dialog">
+    <div data-role="header" data-theme="a" class="ui-corner-top">
+        <h1>About</h1>
+    </div>
+    <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+        <h3 class="ui-title">Sistema de Turnos y Historias Clinicas</h3>
+        <p>Desarrollado por CAP Sistemas</p>
+        <a href="#" data-role="button" data-inline="true" data-rel="back" data-transition="none" data-theme="b">Aceptar</a>
+    </div>
+  </script>
+
+  <script type="text/javascript">
+    function onBodyLoad() {
+      document.addEventListener("deviceready", function() {
+        window.startApp();
+      }, false);
+    }
+  </script>  
+</head>
+
+<body onload="onBodyLoad()"></body>
+
+</html>

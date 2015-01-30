@@ -1,0 +1,3207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProductVersion>10.0.20506</ProductVersion>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{3677C1B7-D68B-4CF9-BF8A-E869D437A6DF}</ProjectGuid>
+        <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>com.capsistemas.consultorios</RootNamespace>
+        <AssemblyName>com.capsistemas.consultorios</AssemblyName>
+        <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+        <SilverlightVersion>
+        </SilverlightVersion>
+        <TargetFrameworkProfile>
+        </TargetFrameworkProfile>
+        <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+        <SilverlightApplication>true</SilverlightApplication>
+        <SupportedCultures>en-US</SupportedCultures>
+        <XapOutputs>true</XapOutputs>
+        <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+        <XapFilename>CordovaAppProj_$(Configuration)_$(Platform).xap</XapFilename>
+        <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+        <SilverlightAppEntry>com.capsistemas.consultorios.App</SilverlightAppEntry>
+        <ValidateXaml>true</ValidateXaml>
+        <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+        <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+        <BackgroundAgentType />
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>Bin\Debug</OutputPath>
+        <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <NoConfig>true</NoConfig>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>Bin\Release</OutputPath>
+        <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <NoConfig>true</NoConfig>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+        <DebugSymbols>true</DebugSymbols>
+        <OutputPath>Bin\x86\Debug</OutputPath>
+        <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>full</DebugType>
+        <PlatformTarget>
+        </PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+        <Optimize>false</Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+        <OutputPath>Bin\x86\Release</OutputPath>
+        <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <Optimize>true</Optimize>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>pdbonly</DebugType>
+        <PlatformTarget>
+        </PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+        <DebugSymbols>true</DebugSymbols>
+        <OutputPath>Bin\ARM\Debug</OutputPath>
+        <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>full</DebugType>
+        <PlatformTarget>
+        </PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+        <Prefer32Bit>false</Prefer32Bit>
+        <Optimize>false</Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+        <OutputPath>Bin\ARM\Release</OutputPath>
+        <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+        <Optimize>true</Optimize>
+        <NoStdLib>true</NoStdLib>
+        <DebugType>pdbonly</DebugType>
+        <PlatformTarget>
+        </PlatformTarget>
+        <ErrorReport>prompt</ErrorReport>
+        <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="cordovalib\Commands\BaseCommand.cs" />
+        <Compile Include="cordovalib\JSON\JsonHelper.cs" />
+        <Compile Include="cordovalib\BrowserMouseHelper.cs" />
+        <Compile Include="cordovalib\CommandFactory.cs" />
+        <Compile Include="cordovalib\ConfigHandler.cs" />
+        <Compile Include="cordovalib\ConsoleHelper.cs" />
+        <Compile Include="cordovalib\CordovaCommandCall.cs" />
+        <Compile Include="cordovalib\CordovaView.xaml.cs">
+            <DependentUpon>CordovaView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="cordovalib\IBrowserDecorator.cs" />
+        <Compile Include="cordovalib\ImageExifHelper.cs" />
+        <Compile Include="cordovalib\MimeTypeMapper.cs" />
+        <Compile Include="cordovalib\NativeExecution.cs" />
+        <Compile Include="cordovalib\OrientationHelper.cs" />
+        <Compile Include="cordovalib\PluginResult.cs" />
+        <Compile Include="cordovalib\ScriptCallback.cs" />
+        <Compile Include="cordovalib\XHRHelper.cs" />
+        <Compile Include="MainPage.xaml.cs">
+            <DependentUpon>MainPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <ApplicationDefinition Include="App.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </ApplicationDefinition>
+        <Page Include="cordovalib\CordovaView.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Include="MainPage.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="config.xml" />
+        <Content Include="Images\appbar.back.rest.png" />
+        <Content Include="Images\appbar.close.rest.png" />
+        <Content Include="Images\appbar.feature.video.rest.png" />
+        <Content Include="Images\appbar.next.rest.png" />
+        <Content Include="Images\appbar.save.rest.png" />
+        <Content Include="Images\appbar.stop.rest.png" />
+        <None Include="cordova\lib\build.js" />
+        <None Include="cordova\lib\clean.js" />
+        <None Include="cordova\lib\deploy.js" />
+        <None Include="cordova\lib\log.js" />
+        <None Include="cordova\lib\target-list.js" />
+        <None Include="cordova\build.bat" />
+        <None Include="cordova\clean.bat" />
+        <None Include="cordova\lib\install-device.bat" />
+        <None Include="cordova\lib\install-emulator.bat" />
+        <None Include="cordova\lib\list-devices.bat" />
+        <None Include="cordova\lib\list-emulator-images.bat" />
+        <None Include="cordova\lib\list-started-emulators.bat" />
+        <None Include="cordova\lib\start-emulator.bat" />
+        <None Include="cordova\log.bat" />
+        <None Include="cordova\run.bat" />
+        <None Include="cordova\version.bat" />
+        <None Include="VERSION" />
+        <None Include="Properties\AppManifest.xml">
+            <SubType>Designer</SubType>
+        </None>
+        <None Include="Properties\WMAppManifest.xml">
+            <SubType>Designer</SubType>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="ApplicationIcon.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="Background.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="SplashScreenImage.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <WCFMetadata Include="Service References\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+    <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+    <ProjectExtensions />
+    <PropertyGroup>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PostBuildEvent>
+        </PostBuildEvent>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="www\config.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\Connection.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cordova.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\index.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\jquery.mobile.datepicker.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\jquery.ui.datepicker.mobile.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\styles.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\icon.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\icon.xcf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\img\logo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\app-config.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\dao\evolucionesDao.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\dao\medicosDao.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\dao\obrassocialesDao.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\dao\pacientesDao.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\dao\tiposdocumentoDao.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\dao\turnosDao.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\jqm-config.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\main.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\model\agendas.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\model\evoluciones.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\model\medicos.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\model\obrassociales.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\model\pacientes.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\model\sessions.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\model\tiposdocumento.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\model\turnos.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\template-loader.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\view\about-dialog.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\view\home-page.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\view\paciente-details-page.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\view\pacientes-page.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\view\post-add-page.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\view\settings-page.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\view\turnos-new-page.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\js\view\turnos-page.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone-relational.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\.gitignore" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\backbone.websqloffline.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\LICENSE" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\README.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\test\lib\jasmine-1.3.1\jasmine-html.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\test\lib\jasmine-1.3.1\jasmine.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\test\lib\jasmine-1.3.1\jasmine.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\test\lib\jasmine-1.3.1\MIT.LICENSE" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\test\lib\mock-ajax.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\test\spec\SpecHelper.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\test\spec\WebSqlSpec.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\test\SpecRunner.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\vendor\backbone.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\vendor\jquery-1.9.1.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\backbone.websqloffline\vendor\underscore.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\datebox\jqm-datebox.core.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\datebox\jqm-datebox.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\datebox\jqm-datebox.mode.calbox.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\datebox\sheet.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\00-Read me first - license.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\01-refresh.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\02-redo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\03-loopback.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\04-squiggle.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\05-shuffle.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\06-magnify.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\07-map-marker.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\08-chat.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\09-chat-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\10-medical.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\100-coffee.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\101-gameplan.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\102-walk.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\103-map.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\104-index-cards.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\105-piano.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\106-sliders.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\107-widescreen.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\108-badge.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\109-chicken.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\11-clock.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\110-bug.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\111-user.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\112-group.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\113-navigation.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\114-balloon.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\115-bow-and-arrow.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\116-controller.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\117-todo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\118-coat-hanger.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\119-piggy-bank.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\12-eye.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\120-headphones.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\121-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\122-stats.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\123-id-card.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\124-bullhorn.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\125-food.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\126-moon.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\127-sock.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\128-bone.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\129-golf.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\13-target.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\130-dice.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\131-tower.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\132-ghost.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\133-ufo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\134-viking.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\135-hockeymask.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\136-tractor.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\137-presentation.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\138-scales.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\139-flags.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\14-tag.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\140-gradhat.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\141-lamp.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\142-wine-bottle.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\143-liquor-bottle.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\144-martini.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\145-persondot.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\146-gavel.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\147-popsicle.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\148-doghouse.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\149-windmill.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\15-tags.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\150-sailboat.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\151-telescope.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\152-rolodex.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\153-guitar.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\154-necktie.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\155-bowtie.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\156-controlpad.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\157-wrench.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\158-wrench-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\159-voicemail.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\16-line-chart.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\160-voicemail-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\161-calculator.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\162-receipt.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\163-glasses-1.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\164-glasses-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\165-glasses-3.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\166-newspaper.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\167-upload-photo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\168-upload-photo-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\169-8ball.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\17-bar-chart.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\170-butterfly.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\171-sun.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\172-pricetag.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\173-eyedropper.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\174-imac.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\175-macbook.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\176-ipad.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\177-building.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\178-city.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\179-notepad.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\18-envelope.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\180-stickynote.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\181-hammer.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\182-messenger-bag.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\183-genie-lamp.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\184-warning.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\185-printer.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\186-ruler.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\187-pencil.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\188-paint-roller.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\189-plant.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\19-gear.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\190-bank.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\191-collection.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\192-credit-card.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\193-location-arrow.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\194-note-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\195-barcode.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\196-radiation.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\197-card-diamonds.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\198-card-spades.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\199-card-hearts.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\20-gear2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\200-card-clubs.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\21-skull.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\22-skull-n-bones.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\23-bird.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\24-gift.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\25-weather.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\26-bandaid.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\27-planet.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\28-star.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\29-heart.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\30-key.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\31-ipod.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\32-iphone.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\33-cabinet.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\34-coffee.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\35-shopping.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\36-toolbox.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\37-suitcase.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\38-airplane.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\39-spraycan.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\40-inbox.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\41-picture-frame.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\42-photos.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\43-film-roll.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\44-shoebox.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\45-movie-1.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\46-movie-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\47-fuel.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\48-fork-and-knife.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\49-battery.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\50-beaker.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\51-outlet.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\52-pine-tree.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\53-house.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\54-lock.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\55-network.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\56-cloud.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\57-download.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\58-bookmark.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\59-flag.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\60-signpost.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\61-brightness.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\62-contrast.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\63-runner.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\64-zap.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\65-note.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\66-microphone.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\67-tshirt.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\68-paperclip.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\69-display.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\70-tv.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\71-compass.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\72-pin.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\73-radar.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\74-location.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\75-phone.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\76-baby.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\77-ekg.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\78-stopwatch.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\79-medical-bag.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\80-shopping-cart.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\81-dashboard.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\82-dog-paw.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\83-calendar.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\84-lightbulb.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\85-trophy.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\86-camera.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\87-wine-glass.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\88-beer-mug.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\89-dumbell.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\90-life-buoy.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\91-beaker-2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\92-test-tube.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\93-thermometer.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\94-pill.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\95-equalizer.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\96-book.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\97-puzzle.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\98-palette.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\glyphish\99-umbrella.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\images\arrow_right.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\images\arrow_right@2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\images\backButtonSprite.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\images\backButtonSprite@2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\images\iconSprite.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\images\iconSprite.psd" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\images\tabSprite.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\images\tiling_stripes.gif" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\ios_inspired\styles.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\backbone-requirejs\backbone-require.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\backbone-requirejs\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\backbone-requirejs\index.php" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\backbone-requirejs\js\collections\CategoriesCollection.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\backbone-requirejs\js\main.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\backbone-requirejs\js\models\CategoryModel.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\backbone-requirejs\js\routers\mobileRouter.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\backbone-requirejs\js\views\CategoryView.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\body-bar-classes\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\button\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\button-markup\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\checkboxradio-checkbox\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\checkboxradio-radio\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\collapsible\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\collapsible-dynamic\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\collapsibleset\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\controlgroup\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\controlgroup-dynamic\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\ajax-loader.gif" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\action-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\action-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\alert-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\alert-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-d-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-d-l-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-d-l-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-d-r-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-d-r-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-d-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-l-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-l-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-r-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-r-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-u-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-u-l-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-u-l-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-u-r-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-u-r-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\arrow-u-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\audio-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\audio-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\back-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\back-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\bars-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\bars-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\bullets-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\bullets-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\calendar-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\calendar-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\camera-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\camera-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\carat-d-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\carat-d-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\carat-l-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\carat-l-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\carat-r-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\carat-r-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\carat-u-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\carat-u-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\check-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\check-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\clock-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\clock-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\cloud-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\cloud-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\comment-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\comment-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\delete-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\delete-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\edit-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\edit-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\eye-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\eye-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\forbidden-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\forbidden-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\forward-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\forward-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\gear-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\gear-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\grid-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\grid-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\heart-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\heart-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\home-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\home-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\info-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\info-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\location-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\location-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\lock-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\lock-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\mail-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\mail-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\minus-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\minus-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\navigation-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\navigation-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\phone-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\phone-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\plus-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\plus-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\power-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\power-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\recycle-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\recycle-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\refresh-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\refresh-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\search-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\search-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\shop-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\shop-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\star-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\star-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\tag-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\tag-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\user-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\user-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\video-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-png\video-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\action-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\action-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\alert-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\alert-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-d-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-d-l-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-d-l-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-d-r-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-d-r-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-d-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-l-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-l-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-r-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-r-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-u-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-u-l-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-u-l-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-u-r-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-u-r-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\arrow-u-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\audio-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\audio-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\back-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\back-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\bars-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\bars-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\bullets-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\bullets-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\calendar-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\calendar-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\camera-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\camera-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\carat-d-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\carat-d-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\carat-l-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\carat-l-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\carat-r-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\carat-r-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\carat-u-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\carat-u-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\check-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\check-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\clock-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\clock-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\cloud-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\cloud-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\comment-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\comment-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\delete-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\delete-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\edit-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\edit-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\eye-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\eye-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\forbidden-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\forbidden-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\forward-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\forward-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\gear-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\gear-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\grid-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\grid-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\heart-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\heart-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\home-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\home-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\info-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\info-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\location-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\location-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\lock-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\lock-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\mail-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\mail-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\minus-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\minus-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\navigation-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\navigation-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\phone-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\phone-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\plus-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\plus-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\power-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\power-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\recycle-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\recycle-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\refresh-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\refresh-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\search-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\search-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\shop-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\shop-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\star-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\star-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\tag-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\tag-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\user-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\user-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\video-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\images\icons-svg\video-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\jquery.mobile-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\jquery.mobile.external-png-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\jquery.mobile.icons-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\jquery.mobile.inline-png-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\jquery.mobile.inline-svg-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\jquery.mobile.structure-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\css\themes\default\jquery.mobile.theme-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\datepicker\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\favicon.ico" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\filterable\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\flipswitch\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\forms\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\forms-disabled\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\forms-field-contain\fieldcontain-hide-label-deprecated.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\forms-field-contain\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\forms-gallery\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\forms-label-hidden-accessible\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\grids\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\grids-buttons\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\grids-custom-responsive\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\icons\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\icons-grunticon\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\intro\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\jqm-contents.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\jqm-contents.php" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\jqm-navmenu.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\jqm-navmenu.php" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\jqm-search.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\jqm-search.php" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\js\jquery.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\js\jquery.mobile-1.4.2.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\js\jquery.mobile-1.4.2.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\js\jquery.mobile-1.4.2.min.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-autocomplete\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-autocomplete-remote\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-autodividers-linkbar\autodividers-linkbar-demo.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-autodividers-linkbar\autodividers-linkbar.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-autodividers-linkbar\autodividers-linkbar.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-autodividers-linkbar\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-autodividers-selector\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-collapsible-item-flat\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-collapsible-item-indented\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-grid\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-grid\listview-grid.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-grid\listview-grid.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\listview-nested-lists\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\loader\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\map-geolocation\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\map-list-toggle\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\map-list-toggle\jquery.gmap.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\map-list-toggle\showMore.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\navbar\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\navigation\demo.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\navigation\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\navigation-hash-processing\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\navigation-linking-pages\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\controls-in-header-footer.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\disabling-a-button-does-not-work.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\dom-ready-not-working.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-can-i-stop-auto-enhancement-of-a-block-of-elements.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-can-i-stop-auto-enhancement-of-elements.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-configure-phonegap-cordova.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-do-i-control-page-titles.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-do-i-load-a-page.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-do-i-scroll-to-a-position.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-do-i-turn-off-url-hiding.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-do-i-use-touch-mouse-events.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\how-does-theming-work.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\injected-content-is-not-enhanced.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\my-html-5-inputs-look-different-in-browsers.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\my-range-search-input-type-is-being-changed.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\pass-query-params-to-page.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\pass-via-the-hash-to-page.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\scripts-and-styles-not-loading.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\sometimes-custom-select-shows-as-dialog-popup.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\the-application-cache-is-not-working.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\triggering-create-on-injected-content-does-not-work.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\updating-the-value-of-enhanced-form-elements-does-not-work.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\why-is-only-the-first-page-loaded.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\old-faq-pages\why-wont-my-css-styles-apply-correctly-to-a-widget.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages\samepagetransition.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages\startpage.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog-alt.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog-buttons.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog-corners.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog-noclosebtn.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog-overlay.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog-rightclosebtn.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog-success.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog-with-select.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\dialog.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-dialog\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-multi-page\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\pages-single-page\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-external\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-external\page-b.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-external-internal\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-external-internal\page-b.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-external-internal\page-c.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-fixed\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-responsive\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-styling\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\panel-swipe-open\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-alignment\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-alignment\popup.alignment.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-arrow-size\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-dynamic\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-iframe\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-iframe\map.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-iframe\popup-iframe-map.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-iframe\popup-iframe-video.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-image-scaling\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-image-scaling\popup-image-scaling.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\popup-outside-multipage\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\rangeslider\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\rwd\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\selectmenu\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\selectmenu-custom\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\selectmenu-custom-filter\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\slider\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\slider-flipswitch\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\slider-tooltip\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-list\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\buenosaires.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\capetown.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\newyork.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\paris.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\seoul.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\swipe-page.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\swipe-page.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\swipe-page\sydney.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\table-column-toggle\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\table-column-toggle-example\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\table-column-toggle-heading-groups\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\table-column-toggle-options\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\table-reflow\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\table-reflow-heading-groups\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\table-reflow-stripes-strokes\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\table-reflow-styling\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\tabs\ajax-content.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\tabs\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\tabs\tabbed-content.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\textinput\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\theme-classic\images\ajax-loader.gif" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\theme-classic\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\theme-classic\theme-classic.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\theme-default\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-dynamic\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-external\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-external\index2.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-external\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-forms\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-fullscreen\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-persistent\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-persistent\page-b.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-persistent\page-c.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-persistent\page-d.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-persistent-optimized\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-persistent-optimized\page-b.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-persistent-optimized\page-c.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\toolbar-fixed-persistent-optimized\page-d.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\transitions\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\transitions\page-transitions-dialog.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\transitions\page-transitions-page.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\css\jqm-demos.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-af.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-ag.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-bb.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-bk.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-hc.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-k.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-mg.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-ok.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-p.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-rh.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-ws.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\album-xx.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\apple.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\bg-pattern.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\bike.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\blackberry_10.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\bmw-thumb.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\bmw.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\buenosaires.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\capetown.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\de.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\devices.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\fi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\firefox-logo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\firefox_os.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\galaxy_express.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\gb.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\gf.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\09-chat2.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\100-coffee.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\18-envelope.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\19-gear.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\21-skull.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\30-key.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\34-coffee.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\88-beermug.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\glyphish-icons\Read me first - license.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\jquery-logo.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\landrover-thumb.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\landrover.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\lumia_800.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\newyork.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\nexus_7.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\paris.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\phone_galaxy3.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\phone_iphone5.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\phone_lumia920.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\phone_onex.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\photo-landscape.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\photo-portrait.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\photo-run.jpeg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\seoul.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\sydney.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\tesla-thumb.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\tesla.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\tizen.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\img\us.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\js\h2widget.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\js\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\js\index.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\js\jqm-demos.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_assets\js\view-source.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\demos\_search\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\ajax-loader.gif" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\action-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\action-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\alert-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\alert-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-d-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-d-l-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-d-l-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-d-r-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-d-r-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-d-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-l-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-l-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-r-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-r-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-u-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-u-l-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-u-l-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-u-r-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-u-r-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\arrow-u-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\audio-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\audio-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\back-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\back-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\bars-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\bars-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\bullets-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\bullets-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\calendar-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\calendar-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\camera-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\camera-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\carat-d-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\carat-d-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\carat-l-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\carat-l-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\carat-r-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\carat-r-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\carat-u-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\carat-u-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\check-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\check-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\clock-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\clock-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\cloud-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\cloud-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\comment-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\comment-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\delete-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\delete-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\edit-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\edit-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\eye-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\eye-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\forbidden-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\forbidden-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\forward-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\forward-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\gear-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\gear-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\grid-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\grid-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\heart-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\heart-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\home-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\home-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\info-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\info-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\location-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\location-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\lock-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\lock-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\mail-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\mail-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\minus-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\minus-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\navigation-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\navigation-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\phone-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\phone-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\plus-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\plus-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\power-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\power-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\recycle-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\recycle-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\refresh-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\refresh-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\search-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\search-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\shop-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\shop-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\star-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\star-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\tag-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\tag-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\user-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\user-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\video-black.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-png\video-white.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\action-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\action-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\alert-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\alert-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-d-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-d-l-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-d-l-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-d-r-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-d-r-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-d-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-l-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-l-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-r-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-r-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-u-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-u-l-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-u-l-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-u-r-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-u-r-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\arrow-u-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\audio-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\audio-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\back-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\back-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\bars-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\bars-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\bullets-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\bullets-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\calendar-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\calendar-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\camera-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\camera-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\carat-d-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\carat-d-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\carat-l-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\carat-l-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\carat-r-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\carat-r-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\carat-u-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\carat-u-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\check-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\check-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\clock-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\clock-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\cloud-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\cloud-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\comment-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\comment-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\delete-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\delete-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\edit-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\edit-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\eye-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\eye-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\forbidden-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\forbidden-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\forward-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\forward-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\gear-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\gear-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\grid-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\grid-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\heart-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\heart-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\home-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\home-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\info-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\info-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\location-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\location-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\lock-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\lock-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\mail-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\mail-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\minus-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\minus-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\navigation-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\navigation-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\phone-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\phone-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\plus-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\plus-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\power-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\power-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\recycle-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\recycle-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\refresh-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\refresh-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\search-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\search-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\shop-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\shop-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\star-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\star-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\tag-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\tag-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\user-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\user-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\video-black.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\images\icons-svg\video-white.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile-1.4.2.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile-1.4.2.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile-1.4.2.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile-1.4.2.min.map" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.external-png-1.4.2.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.external-png-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.icons-1.4.2.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.icons-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.inline-png-1.4.2.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.inline-png-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.inline-svg-1.4.2.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.inline-svg-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.structure-1.4.2.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.structure-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.theme-1.4.2.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile-1.4.2\jquery.mobile.theme-1.4.2.min.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.mobile.datepicker.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\jquery.ui.datepicker.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\underscore.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\network.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\offline.appcache" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\phonegap.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\android\icon-36-ldpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\android\icon-48-mdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\android\icon-72-hdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\android\icon-96-xhdpi.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\bada\icon-128.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\bada-wac\icon-48-type5.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\bada-wac\icon-50-type3.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\bada-wac\icon-80-type4.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\blackberry\icon-80.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\ios\icon-57-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\ios\icon-57.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\ios\icon-72-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\ios\icon-72.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\tizen\icon-128.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\webos\icon-64.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\windows-phone\icon-173-tile.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\windows-phone\icon-48.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\icon\windows-phone\icon-62-tile.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-hdpi-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-hdpi-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-ldpi-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-ldpi-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-mdpi-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-mdpi-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-xhdpi-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\android\screen-xhdpi-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\bada\screen-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\bada-wac\screen-type3.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\bada-wac\screen-type4.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\bada-wac\screen-type5.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\blackberry\screen-225.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-ipad-landscape-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-ipad-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-ipad-portrait-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-ipad-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-landscape-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-landscape.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-portrait-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-portrait-568h-2x.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\ios\screen-iphone-portrait.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\tizen\README.md" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\webos\screen-64.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\res\screen\windows-phone\screen-portrait.jpg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\helper.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\index.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\lib\jasmine-1.2.0\jasmine-html.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\lib\jasmine-1.2.0\jasmine.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\lib\jasmine-1.2.0\jasmine.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec\lib\jasmine-1.2.0\MIT.LICENSE" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\spec.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\com.phonegap.plugins.sqlite\www\SQLitePlugin.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\com.millerjames01.sqlite-plugin\www\SQLitePlugin.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cordova_plugins.js" />
+    </ItemGroup>
+</Project>
